@@ -28,7 +28,7 @@ def validacion():
 def resultado():
     nombre = request.args.get('nombre')
     if nombre == '':
-        mensaje = 'campo vacío'
+        mensaje = 'campo vacio'
         return render_template('resultado.html', mensaje=mensaje)
     elif nombre != '':
         first_character = nombre[0]

@@ -1,8 +1,9 @@
 {% extends "basico.html" %}
 
 {% block contenido %}
+<h2>Resultado de la validacion</h2>
     {% if mensaje == "campo vacio" %}
-        <h2>{{ mensaje}}</h2>
+        <h2>El campo Nombre no puede estar vacio</h2>
     
     {% elif mensaje == "empieza con numero" %}
         <h2>Nombre debe empezar con letra mayuscula</h2>
