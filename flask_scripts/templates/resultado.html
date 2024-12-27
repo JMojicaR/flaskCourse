@@ -1,7 +1,36 @@
 {% extends "basico.html" %}
 
 {% block contenido %}
-
-{{ mensaje }}
-
+    {% if mensaje == "campo vacio" %}
+        <h2>{{ mensaje}}</h2>
+    
+    {% elif mensaje == "empieza con numero" %}
+        <h2>Nombre debe empezar con letra mayuscula</h2>
+    
+    {% elif mensaje == "Nombre solo tiene letras mayusculas" %}
+        <ul>
+            <li>El nombre debe contener letras minusculas</li>
+            <li>El nombre debe contener numeros</li>
+        </ul>
+    
+    {% elif mensaje == "Nombre no tiene numeros" %}
+        <ul>
+            <li>El nombre debe contener numeros</li>
+        </ul>
+    
+    {% elif mensaje == "Nombre no tiene minusculas" %}
+        <ul>
+            <li>El nombre debe contener letras minusculas</li>
+        </ul>
+    
+    {% elif mensaje == "Nombre correcto" %}
+        <h2>{{ mensaje }}</h2>
+    
+    {% elif mensaje == "Nombre solo con letras minusculas" %}
+        <ul>
+            <li>El nombre debe iniciar con mayuscula</li>
+            <li>El nombre debe contener numeros</li>
+        </ul>
+    
+    {% endif %}
 {% endblock %}

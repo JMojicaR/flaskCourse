@@ -31,40 +31,44 @@ def resultado():
         mensaje = 'campo vacío'
         return render_template('resultado.html', mensaje=mensaje)
     elif nombre != '':
-        letter = nombre[0]
-        upper_letter = letter.upper()
-        has_lower_case = any(c.islower() for c in nombre)
-        has_numbers = nombre.isalpha()
-        # Nombre inicia con mayuscula 
-        if letter == upper_letter:
-            # Nombre solo tiene letras mayusculas
-            if has_lower_case == False and has_numbers == False:
-                mensaje = 1
-                return render_template('resultado.html', mensaje=mensaje)
-            # Nombre no tiene minusculas
-            elif has_lower_case == False and has_numbers:
-                mensaje = 2
-                return render_template('resultado.html', mensaje=mensaje)
-            # Nombre no tiene numeros
-            elif has_lower_case and has_numbers == False:
-                mensaje = 3
-                return render_template('resultado.html', mensaje=mensaje)
-            # Nombre correcto
-            elif has_lower_case and has_numbers:
-                mensaje = 4
-                return render_template('resultado.html', mensaje=mensaje)
-        elif letter != upper_letter:
+        first_character = nombre[0]
+        if first_character.isdigit():
+            mensaje = 'empieza con número'
+            return render_template('resultado.html', mensaje=mensaje)
+        else:
+            upper_letter = first_character.upper()
+            starts_with_upper = first_character == upper_letter
+            has_lower_case = any(c.islower() for c in nombre)
+            has_numbers = any(c.isdigit() for c in nombre)
+            # Nombre inicia con mayuscula 
+            if starts_with_upper:
+                # Nombre solo tiene letras mayusculas
+                if not has_lower_case and not has_numbers:
+                    mensaje = "Nombre solo tiene letras mayusculas"
+                    return render_template('resultado.html', mensaje=mensaje)
+                # Nombre no tiene numeros
+                elif has_lower_case and not has_numbers:
+                    mensaje = "Nombre no tiene numeros"
+                    return render_template('resultado.html', mensaje=mensaje)
+                # Nombre no tiene minusculas
+                elif not has_lower_case and has_numbers:
+                    mensaje = "Nombre no tiene minusculas"
+                    return render_template('resultado.html', mensaje=mensaje)
+                # Nombre correcto
+                elif has_lower_case and has_numbers:
+                    mensaje = "Nombre correcto"
+                    return render_template('resultado.html', mensaje=mensaje)
             # Nombre solo con caracteres especiales
-            if has_lower_case == False and has_numbers == False:
-                mensaje = 5
+            if not has_lower_case and not has_numbers:
+                mensaje = "Nombre solo con caracteres especiales"
+                return render_template('resultado.html', mensaje=mensaje)
+            # Nombre solo con letras minusculas
+            elif has_lower_case and not has_numbers:
+                mensaje = "Nombre solo con letras minusculas"
                 return render_template('resultado.html', mensaje=mensaje)
             # Nombre solo con numeros
-            elif has_lower_case == False and has_numbers:
-                mensaje = 6
-                return render_template('resultado.html', mensaje=mensaje)
-            # Nombre solo con minusculas
-            elif has_lower_case and has_numbers == False:
-                mensaje = 6
+            elif not has_lower_case and has_numbers:
+                mensaje = "Nombre solo con numeros 2"
                 return render_template('resultado.html', mensaje=mensaje)
 
 @app.errorhandler(404)
