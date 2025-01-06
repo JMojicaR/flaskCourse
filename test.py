@@ -6,3 +6,8 @@ print(letter == upper_letter)
 
 #IjkxY2Y1N2IyY2EzNjZmMWM3ZDA4MzZhMWNhZDNhZmQyNzhkZTdhNjgi.Z25T8g.s9VRCQ1zfo8KuaIWe6kx8DeY_zA
 #IjkxY2Y1N2IyY2EzNjZmMWM3ZDA4MzZhMWNhZDNhZmQyNzhkZTdhNjgi.Z25UKg.2NAWHVztLIqgst19nAWuZm066k8
+
+## pip install flask_migrate
+## pip install Flask-SQLAlchemy
+## export FLASK_APP=ejemplo7.py
+## flask db init
