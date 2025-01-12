@@ -11,3 +11,5 @@ print(letter == upper_letter)
 ## pip install Flask-SQLAlchemy
 ## export FLASK_APP=ejemplo7.py
 ## flask db init
+## flask db migrate -m "Incluir columna color" 
+## flask db upgrade
