@@ -1,0 +1,11 @@
+{% extends "vista_base.html" %}
+
+{% block contenido %}
+    <h3>Registro de mascotas</h3>
+    <form method="post">
+        {{ formulario.hidden_tag() }}
+        {{ formulario.nombre.label }} {{ formulario.nombre() }}
+        {{ formulario.submit }}
+    </form>
+    
+{% endblock %}

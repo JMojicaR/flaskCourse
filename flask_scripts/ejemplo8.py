@@ -25,6 +25,10 @@ class Mascota(db.Model):
     def __repr__(self):
         texto = f"Mascota('{self.nombre}"
         return texto
+    
+    def mostrar_juguetes(self):
+        for juguete in self.juguetes:
+            print(juguete)
 
 class Juguete(db.Model):
     __tablename__ = 'juguetes'

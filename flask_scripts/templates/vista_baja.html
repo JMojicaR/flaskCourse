@@ -1,0 +1,11 @@
+{% extends "vista_base.html" %}
+
+{% block contenido %}
+    <h3>Eliminacion de mascotas</h3>
+    <form method="post">
+        {{ formulario.hidden_tag() }}
+        {{ formulario.ID.label }} {{ formulario.id() }}
+        {{ formulario.submit }}
+    </form>
+    
+{% endblock %}
