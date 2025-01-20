@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+    <p>Ya estas dentro del sistema</p>
+    {% endif %}
+{% endblock %}
