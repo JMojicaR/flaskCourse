@@ -1,0 +1,13 @@
+POST http://127.0.0.1:5000/persona/javier
+####
+POST http://127.0.0.1:5000/persona/maria
+####
+POST http://127.0.0.1:5000/persona/ricardo
+####
+POST http://127.0.0.1:5000/persona/felix
+####
+GET http://127.0.0.1:5000/persona/juan
+####
+GET http://127.0.0.1:5000/listar
+####
+DELETE http://127.0.0.1:5000/persona/ricardo
